@@ -18,6 +18,10 @@ body {
   line-height: 1.6;
 }
 
+/* Justify text in paragraphs within the main content */
+main.container p {
+    text-align: justify;
+}
 .navbar {
   transition: var(--transition);
   box-shadow: var(--shadow);
