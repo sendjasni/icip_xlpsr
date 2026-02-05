@@ -44,9 +44,12 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-8">
-            <h2 class="fw-bold">The Extreme License Plate Super-Resolution (XLPSR) Challenge</h2>
-            <p class="lead mb-2">IEEE ICIP 2026 — Tampere, Finland</p>
-            <p class="mb-0">Benchmarking SR under severe, real-world degradations.</p>
+            <!-- Updated Hero Text -->
+            <h1 class="fw-bold">The Extreme License Plate Super-Resolution (XLPSR) Challenge</h1>
+            <p class="lead mb-2">An Official Grand Challenge at <a href="https://2026.ieeeicip.org/" target="_blank" class="text-white">IEEE ICIP 2026</a></p>
+            <p class="mb-0">Tampere, Finland • 13–17 September 2026</p>
+            <p class="mt-2"><strong>Benchmarking super-resolution under extreme real-world degradations.</strong></p>
+            <!-- End of Updated Hero Text -->
           </div>
           <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
             <img src="public/images/ICIP_logo.png" alt="ICIP Logo" class="img-fluid" style="max-height:96px" />
@@ -55,14 +58,38 @@
       </div>
     </section>
 
-      
+    <!-- New "Challenge at a Glance" Section -->
+    <section class="py-3 bg-white border-bottom">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h5 class="fw-bold">📋 The Task</h5>
+            <ul class="mb-0">
+              <li><strong>Magnification:</strong> 8× to 16× Super-Resolution</li>
+              <li><strong>Input:</strong> Degraded real-world video frames</li>
+              <li><strong>Key Constraint:</strong> Hallucination-free, OCR-recoverable output</li>
+            </ul>
+          </div>
+          <div class="col-md-6">
+            <h5 class="fw-bold">🚀 Get Involved</h5>
+            <ul class="mb-0">
+              <li><strong>Conference:</strong> Part of <a href="https://2026.ieeeicip.org/" target="_blank">IEEE ICIP 2026</a></li>
+              <li><strong>Status:</strong> Details forthcoming</li>
+              <li><strong>Next Step:</strong> Check the <a href="timeline.html">Timeline</a> & <a href="registration.html">Rules</a> pages</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of New Section -->
+
     <main class="container my-4">
      
       <section class="overview">
         <h2 class="h4">Overview</h2>
         <p>
           The Extreme In-The-Wild License Plate Super-Resolution (XLPSR) Challenge benchmarks
-          reconstructing readable license plates from highly degraded video frames. Participants design a model
+          reconstructing readable license plates from degraded video frames. Participants design a model
           \(\hat{\mathbf{I}}_{HR} = \mathcal{G}(\mathbf{I}_{LR})\) with magnification factors ranging from 8× to 16×.
           The focus is on <strong>real-world video frames</strong> with motion blur, compression artifacts, noise,
           and viewpoint variability. Models must recover character-level details <em>without hallucination</em>, ensuring reliability
@@ -80,6 +107,25 @@
         <p><strong>High-impact application:</strong> Readable plates are critical for ITS, security, and forensics. The primary automated metric prioritizes functional correctness over purely perceptual quality.</p>
         <p><strong>Hallucination-free generation:</strong> OCR-based evaluation encourages fidelity and avoids plausible but incorrect characters, aligning with reliability in generative models.</p>
       </section>
+
+      <!-- New "Important Dates & Call to Action" Section -->
+      <section class="call-to-action my-5">
+        <h2 class="h4">Participate in the Challenge</h2>
+        <p>The XLPSR Challenge is now in its planning phase as part of IEEE ICIP 2026. We are finalizing the dataset, evaluation server, and precise schedule with the conference organizers.</p>
+
+        <div class="alert alert-info" role="alert">
+          <h5 class="alert-heading">⏳ Awaiting Official Schedule</h5>
+          <p class="mb-0">The final timeline will be announced here and on the <a href="https://2026.ieeeicip.org/" target="_blank">IEEE ICIP 2026 website</a> once confirmed by the Grand Challenge chairs. Key milestones will include data release, submission deadlines, and result announcements.</p>
+        </div>
+
+        <p><strong>How to prepare:</strong></p>
+        <ol>
+          <li>Review the proposed <a href="dataset.html">dataset</a> and <a href="timeline.html">timeline</a> structure.</li>
+          <li>Familiarize yourself with the <a href="registration.html">rules & evaluation protocol</a>.</li>
+          <li>Check back regularly for the official announcement and start of registration.</li>
+        </ol>
+      </section>
+      <!-- End of New Section -->
 
       <section class="overview">
         <h2 class="h4">Evaluation Protocol</h2>
