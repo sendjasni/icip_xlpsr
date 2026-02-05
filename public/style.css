@@ -18,6 +18,23 @@ body {
   line-height: 1.6;
 }
 
+/* Additional general styles for timeline integration */
+.badge-phase {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    margin-left: 10px;
+}
+
+/* Ensure proper text alignment for timeline descriptions */
+.timeline-desc {
+    text-align: left;
+}
+
+/* Make sure the timeline respects the main container's text justification */
+main.container .timeline-desc {
+    text-align: left !important;
+}
+
 /* Justify text in paragraphs within the main content */
 main.container p {
     text-align: justify;
