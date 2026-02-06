@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>The Extreme License Plate Super-Resolution (XLPSR) Challenge</title>
+    <title>Team - XLPSR Challenge</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,6 +11,149 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="public/style.css" />
+    <style>
+      /* Team-specific styles */
+      .team-member-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        height: 100%;
+      }
+      
+      .team-member-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+      }
+      
+      .team-member-img {
+        width: 160px;
+        height: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #f0f0f0;
+        margin: 0 auto 20px;
+        display: block;
+        background-color: #e9ecef;
+      }
+      
+      .placeholder-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #6c757d, #495057);
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 300;
+      }
+      
+      .team-member-name {
+        color: var(--primary-color);
+        font-weight: 700;
+        margin-bottom: 5px;
+        font-size: 1.25rem;
+      }
+      
+      .team-member-title {
+        color: var(--secondary-color);
+        font-weight: 600;
+        margin-bottom: 10px;
+        font-size: 1rem;
+      }
+      
+      .team-member-org {
+        color: #666;
+        font-weight: 500;
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+      }
+      
+      .team-member-contact {
+        background-color: #f8f9fa;
+        padding: 12px 15px;
+        border-radius: 8px;
+        margin-top: 15px;
+        border-left: 3px solid var(--primary-color);
+      }
+      
+      .contact-label {
+        font-weight: 600;
+        color: #555;
+        font-size: 0.9rem;
+      }
+      
+      .contact-email {
+        color: var(--secondary-color);
+        font-weight: 500;
+        word-break: break-word;
+      }
+      
+      .contact-email:hover {
+        text-decoration: underline;
+      }
+      
+      .lead-organizer {
+        border: 2px solid #ffc107;
+        position: relative;
+      }
+      
+      .lead-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: #ffc107;
+        color: #212529;
+        font-weight: 700;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        z-index: 2;
+      }
+      
+      .team-section-title {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+      }
+      
+      .team-section-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        border-radius: 2px;
+      }
+      
+      .org-logo {
+        max-height: 40px;
+        margin-right: 10px;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+      }
+      
+      .org-logo:hover {
+        filter: grayscale(0%);
+        opacity: 1;
+      }
+      
+      @media (max-width: 768px) {
+        .team-member-img {
+          width: 140px;
+          height: 140px;
+        }
+        
+        .lead-badge {
+          top: 10px;
+          right: 10px;
+          font-size: 0.7rem;
+          padding: 4px 10px;
+        }
+      }
+    </style>
     <script>
       window.MathJax = { tex: { inlineMath: [['\\(','\\)'], ['$', '$']] } };
     </script>
@@ -33,7 +176,7 @@
             <li class="nav-item"><a class="nav-link" href="timeline.html">Timeline</a></li>
             <li class="nav-item"><a class="nav-link" href="registration.html">Rules & Registration</a></li>
             <li class="nav-item"><a class="nav-link" href="prizes.html">Prizes</a></li>
-            <li class="nav-item"><a class="nav-link" href="team.html">Team</a></li>
+            <li class="nav-item"><a class="nav-link active" href="team.html">Team</a></li>
             <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
           </ul>
         </div>
@@ -44,9 +187,10 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-8">
-            <h2 class="fw-bold">The Extreme License Plate Super-Resolution (XLPSR) Challenge</h2>
-            <p class="lead mb-2">IEEE ICIP 2026 — Tampere, Finland</p>
-            <p class="mb-0">Benchmarking SR under severe, real-world degradations.</p>
+            <h1 class="fw-bold">Organizing Team</h1>
+            <p class="lead mb-2">Meet the experts behind the XLPSR Challenge</p>
+            <p class="mb-0">An Official Grand Challenge at <a href="https://2026.ieeeicip.org/" target="_blank" class="text-white">IEEE ICIP 2026</a></p>
+            <p class="mt-2">Tampere, Finland • 13–17 September 2026</p>
           </div>
           <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
             <img src="public/images/ICIP_logo.png" alt="ICIP Logo" class="img-fluid" style="max-height:96px" />
@@ -55,47 +199,163 @@
       </div>
     </section>
 
-    <main class="container my-4">
-        <section class="team">
-            <h2 class="h4">Organizers</h2>
-            <div class="row g-3 justify-content-center">
-                <div class="col-md-10">
-                <div class="card p-3">
-                    <h5 class="mb-1">Chaker LARABI — XLIM, Université de Poitiers (Lead Organizer)</h5>
-                    <p class="mb-1"><strong>Contact:</strong> chaker.larabi@univ-poitiers.fr</p>
-                    <p class="mb-0">Full Professor, head of ASALI at XLIM. Focus on image/video enhancement, perceptual optimization, quality assessment, compression, and immersive media. Supervised 20+ PhDs, authored 200+ publications, led national/international projects, active in IEEE conferences and journal editorial boards.</p>
+    <main class="container my-5">
+      <section class="team">
+        <h2 class="h3 team-section-title">Challenge Organizers</h2>
+        <p class="mb-4">The XLPSR Challenge is organized by a team of researchers and engineers specializing in image processing, computer vision, and video compression from leading French academic and industrial institutions.</p>
+        
+        <div class="row g-4 justify-content-center">
+          
+          <!-- Lead Organizer -->
+          <div class="col-lg-10">
+            <div class="card team-member-card lead-organizer p-4">
+              <span class="lead-badge">Lead Organizer</span>
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center">
+                  <!-- Placeholder for photo - replace with actual image -->
+                  <div class="team-member-img placeholder-img">
+                    CL
+                  </div>
+                  <div class="mt-2">
+                    <img src="public/images/xlim_logo.png" alt="XLIM Logo" class="org-logo" style="max-height: 35px;">
+                    <img src="public/images/univ_poitiers_logo.png" alt="Univ Poitiers Logo" class="org-logo" style="max-height: 35px;">
+                  </div>
                 </div>
+                <div class="col-md-9">
+                  <h3 class="team-member-name">Chaker LARABI</h3>
+                  <p class="team-member-title">Full Professor, Head of ASALI Research Group</p>
+                  <p class="team-member-org">XLIM Laboratory, Université de Poitiers</p>
+                  <p>Chaker Larabi leads the ASALI research group at XLIM, focusing on image/video enhancement, perceptual optimization, quality assessment, compression, and immersive media. He has supervised over 20 PhD students, authored more than 200 publications, and led numerous national and international projects. He is actively involved in IEEE conferences and serves on editorial boards of several journals.</p>
+                  <div class="team-member-contact">
+                    <span class="contact-label">Contact:</span><br>
+                    <a href="mailto:chaker.larabi@univ-poitiers.fr" class="contact-email">chaker.larabi@univ-poitiers.fr</a>
+                  </div>
                 </div>
-                <div class="col-md-10">
-                <div class="card p-3">
-                    <h5 class="mb-1">Didier Nicholson — Ektacom</h5>
-                    <p class="mb-1"><strong>Contact:</strong> dnicholson@ektacom.com</p>
-                    <p class="mb-0">Research & Technology Director. Work on image/video coding, transmission, and processing. Supervised a PhD, jury member for 15+ theses, 30+ publications, projects leadership, active in standardization (JPEG/MPEG) for 25+ years.</p>
-                </div>
-                </div>
-                <div class="col-md-10">
-                <div class="card p-3">
-                    <h5 class="mb-1">Abderrezzaq Sendjasni — XLIM, Université de Poitiers</h5>
-                    <p class="mb-1"><strong>Contact:</strong> abderrezzaq.sendjasni@univ-poitiers.fr</p>
-                    <p class="mb-0">Postdoctoral Researcher at CNRS/XLIM, specializing in computer vision and deep learning for visual media. PhD from Université de Poitiers and NTNU. Focus on perceptual QA, super-resolution, and 360°/point cloud processing.</p>
-                </div>
-                </div>
-                <div class="col-md-10">
-                <div class="card p-3">
-                    <h5 class="mb-1">Melan Vijayaratnam — Ektacom</h5>
-                    <p class="mb-1"><strong>Contact:</strong> mvijayaratnam@ektacom.com</p>
-                    <p class="mb-0">Research Engineer working on AI for compressed video. PhD from Telecom Paris (IPP) on temporal extrapolation for zero-latency video transmission, with contributions to ICIP, VCIP, and EUVIP.</p>
-                </div>
-                </div>
-                <div class="col-md-10">
-                <div class="card p-3">
-                    <h5 class="mb-1">Gabriele Facciolo — Borelli, École Normale Sup. Paris‑Saclay</h5>
-                    <p class="mb-1"><strong>Contact:</strong> gabriele.facciolo@ens-paris-saclay.fr</p>
-                    <p class="mb-0">Leads image-processing group at Centre Borelli. Research in mathematical modeling and ML for computer vision, restoration, and remote sensing. Editor-in-Chief of IPOL. Led numerous research and transfer projects with institutional/industry partners.</p>
-                </div>
-                </div>
+              </div>
             </div>
-        </section>
+          </div>
+          
+          <!-- Organizer 2 -->
+          <div class="col-md-6 col-lg-5">
+            <div class="card team-member-card p-4">
+              <div class="text-center">
+                <!-- Placeholder for photo - replace with actual image -->
+                <div class="team-member-img placeholder-img">
+                  DN
+                </div>
+                <img src="public/images/ektacom_logo.png" alt="Ektacom Logo" class="org-logo mt-2" style="max-height: 30px;">
+              </div>
+              <div class="card-body p-0 pt-3">
+                <h4 class="team-member-name">Didier Nicholson</h4>
+                <p class="team-member-title">Research & Technology Director</p>
+                <p class="team-member-org">Ektacom</p>
+                <p class="mb-3">Didier Nicholson specializes in image/video coding, transmission, and processing. With over 25 years of experience in standardization (JPEG/MPEG), he has supervised PhD students, served on 15+ thesis juries, authored 30+ publications, and led multiple research and technology transfer projects.</p>
+                <div class="team-member-contact">
+                  <span class="contact-label">Contact:</span><br>
+                  <a href="mailto:dnicholson@ektacom.com" class="contact-email">dnicholson@ektacom.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Organizer 3 -->
+          <div class="col-md-6 col-lg-5">
+            <div class="card team-member-card p-4">
+              <div class="text-center">
+                <!-- Placeholder for photo - replace with actual image -->
+                <div class="team-member-img placeholder-img">
+                  AS
+                </div>
+                <img src="public/images/xlim_logo.png" alt="XLIM Logo" class="org-logo mt-2" style="max-height: 35px;">
+                <img src="public/images/univ_poitiers_logo.png" alt="Univ Poitiers Logo" class="org-logo mt-2" style="max-height: 35px;">
+              </div>
+              <div class="card-body p-0 pt-3">
+                <h4 class="team-member-name">Abderrezzaq Sendjasni</h4>
+                <p class="team-member-title">Postdoctoral Researcher</p>
+                <p class="team-member-org">CNRS/XLIM, Université de Poitiers</p>
+                <p class="mb-3">Abderrezzaq Sendjasni specializes in computer vision and deep learning for visual media. He earned his PhD from Université de Poitiers and NTNU, focusing on perceptual quality assessment, super-resolution, and 360°/point cloud processing for enhanced visual experiences.</p>
+                <div class="team-member-contact">
+                  <span class="contact-label">Contact:</span><br>
+                  <a href="mailto:abderrezzaq.sendjasni@univ-poitiers.fr" class="contact-email">abderrezzaq.sendjasni@univ-poitiers.fr</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Organizer 4 -->
+          <div class="col-md-6 col-lg-5">
+            <div class="card team-member-card p-4">
+              <div class="text-center">
+                <!-- Placeholder for photo - replace with actual image -->
+                <div class="team-member-img placeholder-img">
+                  MV
+                </div>
+                <img src="public/images/ektacom_logo.png" alt="Ektacom Logo" class="org-logo mt-2" style="max-height: 30px;">
+              </div>
+              <div class="card-body p-0 pt-3">
+                <h4 class="team-member-name">Melan Vijayaratnam</h4>
+                <p class="team-member-title">Research Engineer</p>
+                <p class="team-member-org">Ektacom</p>
+                <p class="mb-3">Melan Vijayaratnam works on AI applications for compressed video enhancement. He earned his PhD from Telecom Paris (IPP) with research on temporal extrapolation for zero-latency video transmission. His work has been presented at major conferences including ICIP, VCIP, and EUVIP.</p>
+                <div class="team-member-contact">
+                  <span class="contact-label">Contact:</span><br>
+                  <a href="mailto:mvijayaratnam@ektacom.com" class="contact-email">mvijayaratnam@ektacom.com</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Organizer 5 -->
+          <div class="col-md-6 col-lg-5">
+            <div class="card team-member-card p-4">
+              <div class="text-center">
+                <!-- Placeholder for photo - replace with actual image -->
+                <div class="team-member-img placeholder-img">
+                  GF
+                </div>
+                <img src="public/images/ens_logo.png" alt="ENS Paris-Saclay Logo" class="org-logo mt-2" style="max-height: 40px;">
+              </div>
+              <div class="card-body p-0 pt-3">
+                <h4 class="team-member-name">Gabriele Facciolo</h4>
+                <p class="team-member-title">Research Group Leader</p>
+                <p class="team-member-org">Centre Borelli, École Normale Supérieure Paris‑Saclay</p>
+                <p class="mb-3">Gabriele Facciolo leads the image-processing group at Centre Borelli. His research focuses on mathematical modeling and machine learning for computer vision, image restoration, and remote sensing. He serves as Editor-in-Chief of IPOL and has led numerous research projects with both institutional and industry partners.</p>
+                <div class="team-member-contact">
+                  <span class="contact-label">Contact:</span><br>
+                  <a href="mailto:gabriele.facciolo@ens-paris-saclay.fr" class="contact-email">gabriele.facciolo@ens-paris-saclay.fr</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section>
+      
+      <section class="mt-5 pt-4">
+        <h3 class="h4 mb-4">Institutional Partners</h3>
+        <div class="row align-items-center justify-content-center g-4">
+          <div class="col-6 col-md-4 col-lg-2 text-center">
+            <img src="public/images/xlim_logo.png" alt="XLIM Laboratory" class="img-fluid" style="max-height: 60px;">
+            <p class="small mt-2 mb-0">XLIM Laboratory</p>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 text-center">
+            <img src="public/images/univ_poitiers_logo.png" alt="Université de Poitiers" class="img-fluid" style="max-height: 60px;">
+            <p class="small mt-2 mb-0">Université de Poitiers</p>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 text-center">
+            <img src="public/images/ektacom_logo.png" alt="Ektacom" class="img-fluid" style="max-height: 50px;">
+            <p class="small mt-2 mb-0">Ektacom</p>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 text-center">
+            <img src="public/images/ens_logo.png" alt="ENS Paris-Saclay" class="img-fluid" style="max-height: 70px;">
+            <p class="small mt-2 mb-0">ENS Paris‑Saclay</p>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2 text-center">
+            <img src="public/images/anr_logo.png" alt="ANR" class="img-fluid" style="max-height: 60px;">
+            <p class="small mt-2 mb-0">ANR</p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="bg-dark text-white py-4 mt-5">
@@ -110,7 +370,7 @@
             <img src="public/images/new_logo.png" alt="Partner Logos" class="img-fluid" />
           </div>
           <div class="col-md-4 text-md-end">
-            <small>&copy; XLPSR Challenge</small>
+            <small>&copy; XLPSR Challenge • IEEE ICIP 2026 • Tampere, Finland</small>
           </div>
         </div>
       </div>
