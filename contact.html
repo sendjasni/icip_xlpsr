@@ -263,13 +263,8 @@
     submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Preparing...';
 
     // Organizer contacts
-    const primaryContact = 'chaker.larabi@univ-poitiers.fr';
-    const additionalContacts = [
-      'abderrezzaq.sendjasni@univ-poitiers.fr',
-      'dnicholson@ektacom.com',
-      'mvijayaratnam@ektacom.com',
-      'gabriele.facciolo@ens-paris-saclay.fr'
-    ].join(',');
+    const primaryContact = 'xlim.perception@gmail.com';
+    
     
     // Format subject
     const subjectMap = {
@@ -309,7 +304,7 @@ IEEE ICIP 2026 • Tampere, Finland
     setTimeout(() => {
       try {
         // Create and open mailto link
-        const mailtoLink = `mailto:${primaryContact}?cc=${encodeURIComponent(additionalContacts)}&subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        const mailtoLink = `mailto:${primaryContact}&subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
         window.location.href = mailtoLink;
         
         // Success message
