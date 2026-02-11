@@ -207,3 +207,55 @@
         font-size: 1.25rem;
     }
 }
+
+/* Add these styles to your existing registration.css */
+
+.nested-list {
+    list-style: circle;
+    padding-left: 30px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.nested-list li {
+    padding: 4px 0;
+    font-size: 0.95rem;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #d4edda, #c3e6cb);
+    border-left: 4px solid #28a745;
+    color: #155724;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+    border-left: 4px solid #ffc107;
+    color: #856404;
+}
+
+.alert-info {
+    background: linear-gradient(135deg, #d1ecf1, #bee5eb);
+    border-left: 4px solid #17a2b8;
+    color: #0c5460;
+}
+
+.badge {
+    font-weight: 600;
+    padding: 4px 8px;
+    font-size: 0.85rem;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #218838, #1e9e8a);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
