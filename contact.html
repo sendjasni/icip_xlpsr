@@ -150,34 +150,6 @@
           <div class="col-lg-4">
             <div class="contact-sidebar">
               <h3 class="h4 mb-4">Contact Information</h3>
-              
-              <!-- <div class="contact-method">
-                <div class="contact-icon">
-                  <i class="fas fa-user-tie"></i>
-                </div>
-                <div class="contact-details">
-                  <h5>Lead Organizer</h5>
-                  <p class="mb-1">Chaker Larabi</p>
-                  <p class="mb-0">
-                    <a href="mailto:chaker.larabi@univ-poitiers.fr" class="contact-link">
-                      chaker.larabi@univ-poitiers.fr
-                    </a>
-                  </p>
-                </div>
-              </div>
-              
-              <div class="contact-method">
-                <div class="contact-icon">
-                  <i class="fas fa-university"></i>
-                </div>
-                <div class="contact-details">
-                  <h5>Primary Institution</h5>
-                  <p class="mb-1">XLIM Laboratory</p>
-                  <p class="mb-1">Université de Poitiers</p>
-                  <p class="mb-0">Poitiers, France</p>
-                </div>
-              </div> -->
-              
               <div class="contact-method">
                 <div class="contact-icon">
                   <i class="fas fa-globe"></i>
@@ -259,31 +231,102 @@
       </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
-      // Basic form validation (frontend only)
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = contactForm.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.innerHTML;
+
+  contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    // Get form values
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value;
+    const message = document.getElementById('message').value.trim();
+    const consent = document.getElementById('consent').checked;
+    
+    // Validation
+    if (!name || !email || !subject || !message || !consent) {
+      alert('❌ Please fill in all required fields and agree to the consent statement.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      alert('❌ Please enter a valid email address.');
+      return;
+    }
+
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span> Preparing...';
+
+    // Organizer contacts
+    const primaryContact = 'chaker.larabi@univ-poitiers.fr';
+    const additionalContacts = [
+      'abderrezzaq.sendjasni@univ-poitiers.fr',
+      'dnicholson@ektacom.com',
+      'mvijayaratnam@ektacom.com',
+      'gabriele.facciolo@ens-paris-saclay.fr'
+    ].join(',');
+    
+    // Format subject
+    const subjectMap = {
+      'registration': '📋 Registration & Participation',
+      'dataset': '💾 Dataset & Data Access',
+      'technical': '🔧 Technical Issues',
+      'rules': '📏 Rules & Submission',
+      'sponsorship': '🤝 Sponsorship Opportunities',
+      'other': '❓ Other Inquiry'
+    };
+    
+    const formattedSubject = subjectMap[subject] || subject;
+    const emailSubject = `[XLPSR Challenge] ${formattedSubject} - ${name}`;
+    
+    // Format email body
+    const emailBody = `
+════════════════════════════════════
+XLPSR CHALLENGE - CONTACT FORM
+════════════════════════════════════
+
+👤 SENDER INFORMATION
+────────────────────────
+Name:  ${name}
+Email: ${email}
+Type:  ${formattedSubject}
+
+📝 MESSAGE
+────────────────────────
+${message}
+
+────────────────────────
+Sent via XLPSR Challenge contact form
+IEEE ICIP 2026 • Tampere, Finland
+    `.trim();
+    
+    // Small delay to show loading state
+    setTimeout(() => {
+      try {
+        // Create and open mailto link
+        const mailtoLink = `mailto:${primaryContact}?cc=${encodeURIComponent(additionalContacts)}&subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+        window.location.href = mailtoLink;
         
-        // Basic validation
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const subject = document.getElementById('subject').value;
-        const message = document.getElementById('message').value.trim();
-        const consent = document.getElementById('consent').checked;
-        
-        if (!name || !email || !subject || !message || !consent) {
-          alert('Please fill in all required fields and agree to the consent statement.');
-          return;
-        }
-        
-        // In a real implementation, you would submit to a backend
-        // For now, show a message about the form being in development
-        alert('Thank you for your message! This contact form is currently in development. For immediate assistance, please email chaker.larabi@univ-poitiers.fr directly.');
+        // Success message
+        alert('✅ Message prepared! Your email client will open.\n\n📎 The organizing team has been CC\'d.\n📝 Please review and send the email.');
         
         // Reset form
-        this.reset();
-      });
-    </script>
+        contactForm.reset();
+      } catch (error) {
+        alert('❌ Failed to open email client. Please contact us directly at chaker.larabi@univ-poitiers.fr');
+        console.error(error);
+      } finally {
+        // Reset button
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+      }
+    }, 500);
+  });
+</script>
   </body>
 </html>
