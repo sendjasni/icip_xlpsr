@@ -105,6 +105,172 @@
         </div>
       </section>
 
+      <!-- NEW SECTION: Acquisition Setup -->
+      <section class="dataset-section">
+        <h2 class="h3 section-title">Acquisition Setup</h2>
+        
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-map-marker-alt me-2"></i> Acquisition Circuit</h5>
+              <p>The dataset was acquired at the <strong>Saint-Laurent-de-Mûre</strong> circuit in France. The highlighted portion of the circuit below was used for capturing the video sequences with vehicles in motion under controlled yet realistic conditions.</p>
+              <div class="text-center my-3">
+                <img src="public/images/circuit_Lyon.png" alt="Saint-Laurent-de-Mûre acquisition circuit" class="img-fluid rounded border" style="max-height: 300px;">
+                <p class="text-muted small mt-2"><em>Figure 1: Saint-Laurent-de-Mûre circuit with highlighted acquisition zone.</em></p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-camera me-2"></i> Camera Configuration</h5>
+              <p>The dataset features <strong>17 different cameras</strong> covering a wide spectrum of imaging devices:</p>
+              <ul class="dataset-features">
+                <li><strong>Surveillance cameras:</strong> Reolink, Instar, Hikvision, Dahua</li>
+                <li><strong>Smartphones:</strong> Huawei P40 Pro, iPhone 15/15 Plus, Xiaomi Redmi Note 13, Huawei Honor 9X</li>
+                <li><strong>Professional cameras:</strong> Blackmagic micro studio 4K (x2), Panasonic Lumix DMC-G70</li>
+                <li><strong>Specialized:</strong> Hikvision fisheye camera (severe distortion), infrared camera</li>
+              </ul>
+              <div class="alert alert-secondary mt-2 p-2">
+                <small><i class="fas fa-info-circle me-1"></i> Note: Fisheye (Camera 06) and infrared (Camera 05) sequences are included to represent challenging edge cases, though detection may be difficult.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- NEW SECTION: Dataset Composition -->
+      <section class="dataset-section">
+        <h2 class="h3 section-title">Dataset Composition</h2>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-calculator me-2"></i> Statistics Overview</h5>
+              <ul class="dataset-features">
+                <li><strong>Total unique license plates:</strong> 70 distinct French plates</li>
+                <li><strong>Total sequences:</strong> 451 sequences (10 frames each) = 4,510 images</li>
+                <li><strong>Cameras:</strong> 17 different models</li>
+                <li><strong>Blind test set:</strong> 88 additional sequences (880 images) with 16 unseen plates</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-chart-pie me-2"></i> Data Split</h5>
+              <ul class="dataset-features">
+                <li><strong>Development Set:</strong> 46 sequences (460 images) with full annotations</li>
+                <li><strong>Public Validation Set:</strong> 405 sequences (4,050 images) for leaderboard</li>
+                <li><strong>Blind Test Set:</strong> 88 sequences (880 images) - 16 unseen plates</li>
+              </ul>
+              <p class="mt-2 mb-0"><small>Split ratio: ~10% development, 90% public validation from the annotated corpus, plus separate blind test set.</small></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Camera Distribution Table -->
+        <div class="mt-4">
+          <h5 class="mb-3"><i class="fas fa-table me-2"></i> Image Distribution per Camera</h5>
+          <div class="table-responsive">
+            <table class="table table-sm table-bordered table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th>Camera ID</th>
+                  <th>Camera Model</th>
+                  <th class="text-center">Number of Images</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Camera_01</td><td>Reolink Duo series P730</td><td class="text-center">30</td><td><small>Surveillance</small></td></tr>
+                <tr><td>Camera_02</td><td>Instar IN-9420 2K+</td><td class="text-center">10</td><td><small>Surveillance</small></td></tr>
+                <tr><td>Camera_03</td><td>Reolink Duo series P730</td><td class="text-center">6</td><td><small>Surveillance</small></td></tr>
+                <tr><td>Camera_04</td><td>Instar IN-9420 2K+</td><td class="text-center">15</td><td><small>Surveillance</small></td></tr>
+                <tr><td>Camera_05</td><td>Hikvision DS-2CD2025FWD-1</td><td class="text-center">1</td><td><small>Infrared - challenging</small></td></tr>
+                <tr><td>Camera_06</td><td>Hikvision DS-2CD2942F-IS</td><td class="text-center">0</td><td><small>Fisheye - no detections</small></td></tr>
+                <tr><td>Camera_07</td><td>Hikvision DS-2CD4A85F-IZ</td><td class="text-center">16</td><td><small>Surveillance</small></td></tr>
+                <tr><td>Camera_08</td><td>Blackmagic micro studio 4K</td><td class="text-center">18</td><td><small>Ground level</small></td></tr>
+                <tr><td>Camera_09</td><td>Blackmagic micro studio 4K</td><td class="text-center">47</td><td><small>Elevated position</small></td></tr>
+                <tr><td>Camera_10</td><td>Huawei P40 Pro</td><td class="text-center">54</td><td><small>Smartphone</small></td></tr>
+                <tr><td>Camera_11</td><td>iPhone 15 Plus</td><td class="text-center">130</td><td><small>Smartphone</small></td></tr>
+                <tr><td>Camera_12</td><td>Xiaomi Redmi Note 13</td><td class="text-center">36</td><td><small>Smartphone</small></td></tr>
+                <tr><td>Camera_13</td><td>Huawei Honor 9X (STK-LX1)</td><td class="text-center">8</td><td><small>Smartphone</small></td></tr>
+                <tr><td>Camera_14</td><td>iPhone 15 (A3092)</td><td class="text-center">11</td><td><small>Smartphone</small></td></tr>
+                <tr><td>Camera_15</td><td>Dahua IPC-HDW2230T-AS-S2</td><td class="text-center">1</td><td><small>Low quality</small></td></tr>
+                <tr><td>Camera_16</td><td>Dahua DH-IP-H</td><td class="text-center">45</td><td><small>Surveillance</small></td></tr>
+                <tr><td>Camera_17</td><td>Panasonic Lumix DMC-G70</td><td class="text-center">23</td><td><small>Professional</small></td></tr>
+              </tbody>
+              <tfoot class="table-light">
+                <tr>
+                  <th colspan="2">Total</th>
+                  <th class="text-center">451</th>
+                  <th>sequences (4,510 images)</th>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+          <p class="text-muted small mt-2"><em>Note: Camera_06 (fisheye) and Camera_05 (infrared) represent extreme cases with limited/zero detections.</em></p>
+        </div>
+      </section>
+
+      <!-- NEW SECTION: File Format Specification -->
+      <section class="dataset-section">
+        <h2 class="h3 section-title">File Format & Structure</h2>
+        
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-file-code me-2"></i> Detection Annotations Format</h5>
+              <p>Each sequence folder (10 frames) contains a <code>detections.json</code> file with the following structure:</p>
+              <pre class="bg-light p-3 rounded border" style="font-size: 0.85rem;">
+[
+  {
+    "frame": "000000.png",
+    "license_plate_coordinates": [x1, y1, x2, y2]
+  },
+  {
+    "frame": "000001.png",
+    "license_plate_coordinates": [x1, y1, x2, y2]
+  },
+  ...
+]</pre>
+              <p class="mt-2 mb-0"><small>Coordinates are in [top-left x, top-left y, bottom-right x, bottom-right y] format.</small></p>
+            </div>
+          </div>
+          
+          <div class="col-lg-6">
+            <div class="info-card">
+              <h5 class="d-flex align-items-center"><i class="fas fa-folder-tree me-2"></i> Directory Structure</h5>
+              <pre class="bg-light p-3 rounded border" style="font-size: 0.85rem;">
+dataset/
+├── development/
+│   └── seq_001/
+│       ├── 000000.png
+│       ├── ...
+│       ├── 000009.png
+│       └── detections.json
+├── public_validation/
+│   └── seq_002/
+│       ├── 000000.png
+│       ├── ...
+│       └── detections.json
+└── ground_truth.csv       (global ground truth file)</pre>
+              <p class="mt-2 mb-0"><small>Each sequence contains exactly 10 consecutive frames.</small></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="alert alert-warning mt-3">
+          <h5 class="alert-heading d-flex align-items-center"><i class="fas fa-file-csv me-2"></i> Ground Truth Format</h5>
+          <p class="mb-0">The global <code>ground_truth.csv</code> file maps sequence IDs to license plate text:</p>
+          <pre class="bg-light p-2 mt-2 rounded border" style="font-size: 0.85rem; max-width: 400px;">
+sequence_id,license_plate
+seq_001,AB-123-CD
+seq_002,EF-456-GH
+...</pre>
+        </div>
+      </section>
+
       <section class="dataset-section">
         <h2 class="h3 section-title">Dataset Splits</h2>
         <p class="mb-4">The IMPROVED dataset is divided into three distinct sets to ensure fair evaluation and rigorous benchmarking:</p>
@@ -119,12 +285,12 @@
               <h4>Development Set</h4>
               <p class="dataset-subtitle">For Local Benchmarking & Validation</p>
               <div class="dataset-content">
-                <p><strong>Available to registered participants immediately after registration approval.</strong></p>
+                <p><strong>46 sequences (460 images)</strong></p>
                 <ul>
                   <li>Complete low-resolution video frames</li>
                   <li>Full ground-truth license plate labels</li>
+                  <li>Detection coordinates in JSON format</li>
                   <li>Degradation metadata</li>
-                  <li>Evaluation scripts for local validation</li>
                 </ul>
                 <p class="mb-0"><strong>Purpose:</strong> Allows participants to develop, test, and validate their models locally before submission.</p>
               </div>
@@ -144,17 +310,17 @@
               <h4>Public Validation Set</h4>
               <p class="dataset-subtitle">For Public Leaderboard</p>
               <div class="dataset-content">
-                <p><strong>Used for the public leaderboard during the challenge period.</strong></p>
+                <p><strong>405 sequences (4,050 images)</strong></p>
                 <ul>
                   <li>Low-resolution frames only (no ground truth)</li>
-                  <li>Submit SR outputs for automated evaluation</li>
+                  <li>Submit predictions via CSV</li>
                   <li>Real-time leaderboard ranking</li>
                   <li>Limited submissions per day</li>
                 </ul>
                 <p class="mb-0"><strong>Purpose:</strong> Enables participants to benchmark against others and track progress on the public leaderboard.</p>
               </div>
               <div class="dataset-footer">
-                <span class="badge bg-warning">Timeline Release</span>
+                <span class="badge bg-warning">Releases March 1, 2026</span>
                 <span class="badge bg-secondary">No Labels</span>
               </div>
             </div>
@@ -169,10 +335,10 @@
               <h4>Blind Test Set</h4>
               <p class="dataset-subtitle">For Final Evaluation</p>
               <div class="dataset-content">
-                <p><strong>Used exclusively by organizers for final ranking.</strong></p>
+                <p><strong>88 sequences (880 images)</strong></p>
                 <ul>
-                  <li>Completely unseen data</li>
-                  <li>No ground truth released to participants</li>
+                  <li>16 completely unseen license plates</li>
+                  <li>No ground truth released</li>
                   <li>Similar diversity to development set</li>
                   <li>Evaluated on organizers' servers</li>
                 </ul>
@@ -199,7 +365,7 @@
                 <li><strong>Model constraints:</strong> No restrictions on model architecture, size, or training methodology.</li>
                 <li><strong>Pre-trained models:</strong> Use of publicly available pre-trained models is allowed and encouraged.</li>
                 <li><strong>Data augmentation:</strong> Participants may augment the provided data with synthetic degradations.</li>
-                <li><strong>Submission requirements:</strong> Final models must be submitted as Docker containers for reproducibility.</li>
+                <li><strong>Submission requirements:</strong> Final models must be submitted as Docker containers for reproducibility (top teams only).</li>
               </ul>
             </div>
           </div>
@@ -211,7 +377,7 @@
                 <li>The blind test set will <strong>not</strong> be released to participants at any time</li>
                 <li>Public leaderboard rankings are indicative only</li>
                 <li>Final ranking is based exclusively on blind test set performance</li>
-                <li>All submissions will be reviewed for compliance with rules</li>
+                <li>All submissions must follow the <code>sequence_id,predicted_lp</code> CSV format</li>
                 <li>Dataset license agreement must be signed during registration</li>
               </ul>
             </div>
@@ -220,7 +386,11 @@
         
         <div class="alert alert-info mt-4" role="alert">
           <h5 class="alert-heading d-flex align-items-center"><i class="fas fa-clock me-2"></i> Dataset Release Schedule</h5>
-          <p class="mb-0">The development set will be released immediately upon registration approval. The public validation set will become available according to the challenge timeline. The blind test set remains exclusively with the organizers for final evaluation.</p>
+          <p class="mb-0">
+            <strong>Development Set:</strong> ~February 20, 2026 - Immediately upon registration approval<br>
+            <strong>Public Validation Set:</strong> March 1, 2026 - Leaderboard opens<br>
+            <strong>Blind Test Set:</strong> Never released - remains exclusively with organizers
+          </p>
         </div>
       </section>
       
@@ -239,7 +409,7 @@
             <small>ANR-22-CE39-0006</small>
           </div>
           <div class="col-md-4 text-center mb-3 mb-md-0">
-            <img src="public/images/logo_part.png" alt="Partner Logos" class="img-fluid w-50" />
+            <img src="public/images/logo_part.png" alt="Partner Logos" class="img-fluid" style="max-width: 200px;" />
           </div>
           <div class="col-md-4 text-md-end">
             <small>&copy; XLPSR Challenge • IEEE ICIP 2026 • Tampere, Finland</small>
